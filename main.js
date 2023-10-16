@@ -6,7 +6,7 @@ var ajaxCall = (key, prompt) => {
   return new Promise((resolve, reject) => {
     $.ajax({
       type: "POST",
-      url: "https://api.openai.com/v1/engines/davinci-codex/completions",
+      url: "https://api.openai.com/v1/completions",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${key}`,
