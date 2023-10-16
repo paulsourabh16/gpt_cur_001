@@ -1,12 +1,17 @@
 var ajaxCall = (key, prompt) => {
   const data = {
+      data: JSON.stringify({
+        model: "text-davinci-002",
         prompt: prompt,
-        max_tokens: 40,
+        max_tokens: 1024,
+        n: 1,
+        temperature: 0.5,
       };
   return new Promise((resolve, reject) => {
     $.ajax({
       type: "POST",
       url: "https://api.openai.com/v1/completions",
+      dataType: "json",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${key}`,
@@ -41,8 +46,9 @@ var ajaxCall = (key, prompt) => {
         apiKey,
         prompt
       );
+      return apiKey;
         return(response.choices[0].text);
-      // return apiKey;
+      return apiKey;
     }
   }
   customElements.define("custom-widget", MainWebComponent);
