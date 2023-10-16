@@ -1,7 +1,7 @@
 var ajaxCall = (key, prompt) => {
   const data = {
         model: "text-embedding-ada-002",
-        prompt: prompt,
+        input: prompt,
         deployment: "text-embedding-ada",
         chunk_size: 1
         // max_tokens: 1024,
