@@ -1,15 +1,17 @@
 var ajaxCall = (key, prompt) => {
   const data = {
-        model: "text-davinci-002",
+        model: "text-embedding-ada-002",
         prompt: prompt,
-        max_tokens: 1024,
-        n: 1,
-        temperature: 0.5,
+        deployment: "text-embedding-ada",
+        chunk_size: 1
+        // max_tokens: 1024,
+        // n: 1,
+        // temperature: 0.5,
       };
   return new Promise((resolve, reject) => {
     $.ajax({
       type: "POST",
-      url: "https://api.openai.com/v1/completions",
+      url: "https://api.openai.com/v1/embeddings",
       dataType: "json",
       headers: {
         "Content-Type": "application/json",
