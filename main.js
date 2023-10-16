@@ -47,7 +47,7 @@ var ajaxCall = (key, prompt) => {
         apiKey,
         prompt
       );
-        return(response.choices[0].text);
+        return(response.data[0].embedding);
     }
   }
   customElements.define("custom-widget", MainWebComponent);
