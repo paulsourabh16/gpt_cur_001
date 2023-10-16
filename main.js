@@ -1,6 +1,5 @@
 var ajaxCall = (key, prompt) => {
   const data = {
-      data: JSON.stringify({
         model: "text-davinci-002",
         prompt: prompt,
         max_tokens: 1024,
